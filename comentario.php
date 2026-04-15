@@ -22,24 +22,9 @@ if ($conn->connect_error) {
     die("conexion fallida: " . $conn->connect_error);
 }
 
-//crear base de datos si no existe
-$sql = "CREATE DATABASE IF NOT EXISTS $dbname";
-if ($conn->query($sql) !== TRUE) {
-    die("Error creando base de datos: " . $conn->error);
-}
-
 //seleccionar la base de datos
 $conn->select_db($dbname);
 
-//crear tabla si no existe
-$sql = "CREATE TABLE IF NOT EXISTS comentario (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    texto TEXT NOT NULL,
-    nombre VARCHAR(255) NOT NULL
-)";
-if ($conn->query($sql) !== TRUE) {
-    die("Error creando tabla: " . $conn->error);
-}
 
 //verificar que resibimos los datos del comentario
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -59,15 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit(0);
     }
 
-    //crear tabla si no existe
-    $sql = "CREATE TABLE IF NOT EXISTS $table (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        texto TEXT NOT NULL,
-        nombre VARCHAR(255) NOT NULL
-    )";
-    if ($conn->query($sql) !== TRUE) {
-        die("Error creando tabla: " . $conn->error);
-    }
+ 
 
     //preparar la consulta sql para insertar el comentario en la base de datos
     $stmt = $conn->prepare("INSERT INTO $table (texto, nombre) VALUES (?, ?)");
@@ -82,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $conn->close();
 
-// Handle GET request to fetch comments
+
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if (!isset($_GET['insecto'])) {
         echo json_encode(["error" => "Insecto no especificado"]);

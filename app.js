@@ -71,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Load comments for all containers on page load
     document.querySelectorAll('.contenedor_comentario').forEach(container => {
         loadComments(container);
     });
