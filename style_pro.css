@@ -1,0 +1,229 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+body {
+
+    background-image: url('./fondo\ repetitivo\ de\ .png');
+    background-repeat: repeat;
+    background-size: auto;
+
+}
+
+header{
+    background: rgb(58, 102, 58);
+    width: 100%;
+    clear: both;
+    content: '';
+    display: table;
+
+}
+
+.menu{
+    width: 800px;
+    margin: 0;
+}
+
+.izquierda_enlaces  {
+    display: flex;
+    flex-direction: row;    /* Los elementos se alinean en fila */
+    gap: 30px;
+    list-style: none;       /* Quita la numeración*/
+    padding: 0;
+    margin: 0;
+
+}
+
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    }
+
+    .cuadro {
+    width: 1000px;
+    min-height: 200px;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 2px solid #333;
+    border-radius: 10px;
+      background-color: rgb(113, 202, 147); /* Fondo por defecto */
+    overflow: auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Ejemplo de cuadro con imagen de fondo */
+    .cuadro-imagen {
+    background-image: url('fondo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+      color: rgb(199, 87, 87); /* Para que el texto se vea sobre la imagen */
+    }
+
+
+
+
+.logo{
+    width: 1338px;
+    height: 400px;
+    float: left;
+    padding: 8px;
+}
+
+.segundo{
+    width: 200px;
+    height: 100px;
+    float: left;
+    padding: 8px;
+}
+
+nav{
+    float: right;
+
+}
+
+nav ul li {
+    list-style: none;
+    margin-left: 75px;
+    padding: 25px 0;
+    float: left;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color:rgb(20, 25, 48);
+    font-weight: bold;
+}
+
+
+nav ul li a::before {
+    display:flow-root;
+    content: '' ;
+    width: 0%;
+    background:rgb(36, 151, 142);
+    height: 5px;
+    top: 0;
+    position:absolute ;
+    transition: width 0.2s;
+}
+
+
+nav ul li a:hover::before {
+    width: 100%;
+}
+
+
+
+.contenedor_comentario{
+    background-color: beige;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.12);
+    width: auto;
+    max-width: 360px;
+    margin: 20px auto 0;
+}
+
+.cuadro{
+    text-align: center;
+}
+
+.cuadro p,
+.cuadro ul,
+.cuadro ol{
+    text-align: left;
+    margin: 0 auto 16px;
+    max-width: 820px;
+}
+
+.contenedor_comentario form{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid burlywood;
+    border-radius: 4px;
+}
+
+button{
+    padding: 20px 12px;
+    background-color: azure;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: bisque;
+}
+
+.cuadro img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 16px;
+}
+
+ul_2{
+    list-style: lower-alpha;
+    padding: 0%;
+}
+
+li_2{
+    background-color: burlywood;
+    padding: 10px;
+    border: 10px solid cornsilk;
+    border-radius: 4px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li button{
+    background-color: ivory;
+    border: none;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+li button:hover{
+    background-color: brown;
+}
+
+.scroll-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgb(36, 151, 142);
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    opacity: 0.8;
+    transition: opacity 0.2s, transform 0.2s;
+    z-index: 999;
+}
+
+.scroll-top:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
